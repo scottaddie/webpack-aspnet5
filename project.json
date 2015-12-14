@@ -42,6 +42,9 @@
     "**.vspscc"
   ],
   "scripts": {
+    "postrestore": [
+      "npm install"
+    ],
     "prepublish": [
       "npm install",
       "npm run build"
