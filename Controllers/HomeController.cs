@@ -18,8 +18,8 @@ namespace webpack_aspnet5.Controllers
             const string JAVASCRIPT_KEY = "js";
             
             JObject json = WebpackHelper.GetWebpackAssetsJson(_applicationBasePath);
-            ViewBag.VendorScripts = json.Root.SelectToken("vendor").Value<string>(JAVASCRIPT_KEY);
-            ViewBag.AppScripts = json.Root.SelectToken("app").Value<string>(JAVASCRIPT_KEY);
+            ViewBag.VendorScripts = json.SelectToken("vendor").Value<string>(JAVASCRIPT_KEY);
+            ViewBag.AppScripts = json.SelectToken("app").Value<string>(JAVASCRIPT_KEY);
                         
             return View();
         }
